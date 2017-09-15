@@ -1,0 +1,25 @@
+.toolbar-wrapper{
+    position: fixed;
+    top : 0;
+    height: 50px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
+ }
+
+.desktop-toolbar{
+    display: none;
+}
+
+.fill-spacer{
+    flex : 1 1 auto;
+} 
+
+@media(min-width: 500px){
+    .desktop-toolbar{
+        display: inherit;
+    }
+
+    .mobile-toolbar{
+        display: none;
+    }
+    
+}
