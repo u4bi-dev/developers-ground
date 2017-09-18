@@ -1,0 +1,39 @@
+<md-toolbar class="toolbar-wrapper">
+    <button md-button (click)="onRouter('/main')">
+        <md-icon>place</md-icon> Developers Ground
+    </button>
+
+    <div class="desktop-toolbar">
+        <button md-button>
+            개발자 등록
+        </button>
+        <button md-button [mdMenuTriggerFor]="menu">
+            모임 만들기
+        </button>
+        <md-menu #menu="mdMenu" >
+            <button md-menu-item>
+                <span>그룹 스터디 모임</span>
+            </button>
+            <button md-menu-item>
+                <span>모여서 각자 코딩하기</span>
+            </button>
+            <button md-menu-item>
+                <span>지역 네트워킹 밋업</span>
+            </button>
+        </md-menu>        
+    </div>
+
+    <span class="fill-spacer"></span>
+
+    <div class="desktop-toolbar">
+        <button md-button>
+            로그인
+        </button>
+    </div>    
+    <span class="mobile-toolbar">        
+        <button md-button>
+            <md-icon>menu</md-icon>
+        </button> 
+    </span>
+
+</md-toolbar>

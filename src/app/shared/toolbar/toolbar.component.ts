@@ -13,9 +13,8 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onMain(){
-    this._router.navigate(['/main']);
-    console.log('on main');
+  onRouter(val : string){
+    this._router.navigate([val]);
   }
 
 }

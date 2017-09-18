@@ -2,8 +2,11 @@
     position: fixed;
     top : 0;
     height: 50px;
+    color : #fff;    
+    background : #4E2A84;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
  }
+ 
 
 .desktop-toolbar{
     display: none;

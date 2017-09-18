@@ -1,0 +1,56 @@
+.main-header{
+    position: relative;
+    height: 300px;
+    text-align: center;
+    background : url('https://unsplash.it/1200/800/?image=7&blur') no-repeat fixed 0 0 / cover;
+    background-color : #4E2A84;
+}
+
+.main-title{
+    position: absolute;
+    top:30%;
+    font-size: 2rem;
+    width: 100%;
+    font-weight: bold;
+    color : #fff;
+}
+
+.main-sub-title{
+    position: absolute;
+    top: 55%;
+    width: 100%;
+    font-weight: bold;
+    color : #fff;
+}
+
+.main-sub-button{
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    font-weight: bold;
+    color : #fff;
+}
+
+md-icon{
+    font-size: 1.8rem;
+}
+
+.main-sub-button button{
+    background : #fff;
+    color : #4E2A84;
+    -webkit-transition:all .5s ease;
+       -moz-transition:all .5s ease;
+            transition:all .5s ease;    
+}
+
+.main-sub-button button:hover{
+    background : #4E2A84;
+    color : #fff;
+}
+
+@media(min-width: 350px){
+    .main-title{
+        top: 40%;
+    }
+    
+} 
