@@ -9,12 +9,17 @@ import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 
 import { LoginComponent } from './pages/login/login.component';
 
+import { RegistComponent } from './pages/regist/regist.component';
+
 const routes : Routes = [
   {
     path : 'main', component : MainComponent
   },
   {
     path : 'login', component : LoginComponent
+  },
+  {
+    path : 'regist', component : RegistComponent
   },
   {
     path : '', redirectTo : '/main', pathMatch : 'full'
@@ -31,7 +36,8 @@ const routes : Routes = [
     MainComponent,
     MainHeaderComponent,
     MainInfoComponent,
-    LoginComponent
+    LoginComponent,
+    RegistComponent
   ],
   exports : [
     RouterModule,

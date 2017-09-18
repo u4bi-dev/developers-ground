@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { CoreService } from '../../providers/core.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,13 +8,9 @@ import { Router } from '@angular/router';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(private _router : Router) { }
+  constructor(private core : CoreService) { }
 
   ngOnInit() {
   }
-
-  onRouter(val : string){
-    this._router.navigate([val]);
-  }
-
+  
 }

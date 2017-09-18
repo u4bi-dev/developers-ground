@@ -1,10 +1,10 @@
 <md-toolbar class="toolbar-wrapper">
-    <button md-button (click)="onRouter('/main')">
+    <button md-button (click)="this.core.onRouter('/main')">
         <md-icon>place</md-icon> Developers Ground
     </button>
 
     <div class="desktop-toolbar">
-        <button md-button>
+        <button md-button (click)="this.core.onRouter('/regist')">
             개발자 등록
         </button>
         <button md-button [mdMenuTriggerFor]="menu">
@@ -26,7 +26,7 @@
     <span class="fill-spacer"></span>
 
     <div class="desktop-toolbar">
-        <button md-button (click)="onRouter('/login')">
+        <button md-button (click)="this.core.onRouter('/login')">
             로그인
         </button>
     </div>    
