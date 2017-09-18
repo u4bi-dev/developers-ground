@@ -7,9 +7,14 @@ import { MainComponent } from './pages/main/main.component';
 import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
 import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 
+import { LoginComponent } from './pages/login/login.component';
+
 const routes : Routes = [
   {
     path : 'main', component : MainComponent
+  },
+  {
+    path : 'login', component : LoginComponent
   },
   {
     path : '', redirectTo : '/main', pathMatch : 'full'
@@ -25,7 +30,8 @@ const routes : Routes = [
   declarations: [
     MainComponent,
     MainHeaderComponent,
-    MainInfoComponent
+    MainInfoComponent,
+    LoginComponent
   ],
   exports : [
     RouterModule,
