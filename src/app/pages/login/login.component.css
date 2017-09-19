@@ -22,6 +22,7 @@
 }
 
 .favicon{
+    width: 45%; /*  favicon responsive width */
     max-width: 200px;
     margin-bottom: 25px;
 }

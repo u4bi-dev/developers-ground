@@ -1,3 +1,69 @@
-<p>
-  regist works!
-</p>
+<div class="wrapper">
+    <div class="box">
+
+        <form [formGroup]="registForm" novalidate (ngSubmit)="save(registForm.value, registForm.valid)">
+
+            <div class="avatar">
+                <img (click)="dialogAvatar()" [src]="url">
+            </div>
+
+            <md-expansion-panel #addressPanel class="field address">
+                
+                <md-expansion-panel-header>
+                    
+                    <md-panel-title>
+                        Address
+                    </md-panel-title>
+                    <md-panel-description>
+                        <span *ngIf="seletedAddress.do === '' ">우리 동네를 알려주세요</span>
+                        <span *ngIf="seletedAddress.do !== '' ">{{ seletedAddress.do }} {{ seletedAddress.si }} {{ seletedAddress.dong }}</span>
+                    </md-panel-description>
+
+                </md-expansion-panel-header>
+       
+                <md-form-field class="field">
+                    <input #addressSearchPanel mdInput placeholder="동(읍[면])">                   
+                </md-form-field>
+                
+                <div class="field" *ngFor="let item of address">
+                    <button (click)="seletedAddress = item; addressPanel.close(); namePanel.focus();" md-button><span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span></button>
+                </div>
+                
+            </md-expansion-panel>
+
+            <md-form-field class="field">
+                <input #namePanel mdInput placeholder="Nickname" formControlName="name">
+                <md-error *ngIf="this.isValid('name', 'required') || this.isValid('name', 'minlength')">
+                    2글자 이상으로 입력해주세요.
+                </md-error>
+                <md-error *ngIf="this.isValid('name', 'pattern') && !this.isValid('name', 'minlength')">
+                    한글 문장만으로 입력해주세요.
+                </md-error>
+            </md-form-field>
+
+            <md-form-field class="field">
+                <input mdInput placeholder="Email" formControlName="email">
+                <md-error [hidden]="registForm.controls.email.valid">
+                    이메일 형식으로 작성해주세요.
+                </md-error>
+            </md-form-field>
+
+            <md-form-field class="field">
+                <input mdInput type="password" placeholder="Password" formControlName="password">
+                <md-error *ngIf="this.isValid('password', 'required') || this.isValid('password', 'minlength') && !this.isValid('password', 'maxlength')">
+                    8자 이상으로 입력해주세요.
+                </md-error>
+                <md-error *ngIf="this.isValid('password', 'maxlength') && !this.isValid('password', 'minlength')">
+                    16자 이하로 입력해주세요.
+                </md-error>
+                <md-error *ngIf="this.isValid('password', 'pattern') && !this.isValid('password', 'maxlength') && !this.isValid('password', 'minlength')">
+                    숫자와 특수문자 포함되어야 합니다.
+                </md-error>
+            </md-form-field>             
+
+            <button class="field submit" md-button type="submit">Sign Up</button>
+
+        </form>
+
+    </div>
+</div>

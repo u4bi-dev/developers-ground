@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MainComponent } from './pages/main/main.component';
 import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
@@ -9,7 +10,7 @@ import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 
 import { LoginComponent } from './pages/login/login.component';
 
-import { RegistComponent } from './pages/regist/regist.component';
+import { RegistComponent, RegistAvatarDialog } from './pages/regist/regist.component';
 
 const routes : Routes = [
   {
@@ -30,18 +31,26 @@ const routes : Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule    
   ],
   declarations: [
     MainComponent,
     MainHeaderComponent,
     MainInfoComponent,
     LoginComponent,
-    RegistComponent
+    RegistComponent,    
+    RegistAvatarDialog  
+  ],
+  entryComponents : [
+    RegistAvatarDialog
   ],
   exports : [
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AppRoutingModule { }

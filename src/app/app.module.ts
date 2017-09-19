@@ -16,7 +16,8 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule
   ],
   providers: [
     CoreService
