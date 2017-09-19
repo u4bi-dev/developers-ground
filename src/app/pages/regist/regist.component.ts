@@ -1,8 +1,17 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { Observable } from 'rxjs';
 
-import { User } from './user.interface';
+import { AddressSearchService } from '../../providers/address-search.service';
+
+import { User } from '../../providers/interface/user.interface';
+import { AddressSearch } from '../../providers/interface/address-search.interface';
+
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'app-regist',
@@ -13,25 +22,34 @@ export class RegistComponent implements OnInit {
   public registForm: FormGroup;
   public url: string = '';
 
-  public address = [
-    {do: '서울특별시', si: '동대문구', dong : '장안동'},
-    {do: '서울특별시', si: '동대문구', dong : '장안동'},
-    {do: '서울특별시', si: '동대문구', dong : '장안동'},
-    {do: '서울특별시', si: '동대문구', dong : '장안동'},
-    {do: '서울특별시', si: '동대문구', dong : '장안동'},
-    {do: '서울특별시', si: '동대문구', dong : '장안동'}
-  ];
+  private loading: boolean = false;
+  public address: Observable<AddressSearch[]>;
+  public searchField: FormControl;
 
   public seletedAddress = {
-    do : '',
+    dong : '',
     si : '',
-    dong : ''
+    do : ''
   };
+  
 
-  constructor(private _fb: FormBuilder, public dialog: MdDialog) { }
-
+  constructor(
+    private _fb: FormBuilder,
+    public dialog: MdDialog,
+    private addressSearch: AddressSearchService) { }
+         
   ngOnInit() {
+
+    this.searchField = new FormControl();
     
+    this.address = this.searchField.valueChanges
+        .debounceTime(400)
+        .distinctUntilChanged()
+        .do(_ => this.loading = true)
+        .switchMap(term => this.addressSearch.search(term))
+        .do(_ => this.loading = false);
+    
+
     this.registForm = this._fb.group({
       avatar            : ['', []],
       name              : ['', [

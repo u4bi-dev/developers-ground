@@ -16,14 +16,14 @@
 .field{
     display: block;
     color: #4a4a4a;    
-    width: 100%;
+    width: 95%;
     max-width: 400px;
     margin: auto;
 }
 
 .favicon{
-    width: 45%; /*  favicon responsive width */
-    max-width: 200px;
+    width: 90%; /*  favicon responsive width */
+    /*max-width: 200px;*/
     margin-bottom: 25px;
 }
 

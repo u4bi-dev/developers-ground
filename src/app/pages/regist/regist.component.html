@@ -22,11 +22,13 @@
                 </md-expansion-panel-header>
        
                 <md-form-field class="field">
-                    <input #addressSearchPanel mdInput placeholder="동(읍[면])">                   
+                    <input #addressSearchPanel mdInput placeholder="동(읍[면])" [formControl]="searchField">                   
                 </md-form-field>
                 
-                <div class="field" *ngFor="let item of address">
-                    <button (click)="seletedAddress = item; addressPanel.close(); namePanel.focus();" md-button><span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span></button>
+                <div class="field" *ngFor="let item of address | async">
+                    <button (click)="seletedAddress = item; addressPanel.close(); namePanel.focus();" md-button>
+                        <span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span>
+                    </button>
                 </div>
                 
             </md-expansion-panel>

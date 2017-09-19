@@ -8,7 +8,7 @@ import { CoreService } from '../../../providers/core.service';
 })
 export class MainInfoComponent implements OnInit {
 
-  constructor(private core : CoreService) { }
+  constructor(public core : CoreService) { }
 
   ngOnInit() {
   }
