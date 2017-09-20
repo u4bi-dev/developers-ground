@@ -7,10 +7,10 @@
         <button md-button (click)="this.core.onRouter('/regist')">
             개발자 등록
         </button>
-        <button md-button [mdMenuTriggerFor]="menu">
+        <button md-button [mdMenuTriggerFor]="meetupMenu">
             모임 만들기
         </button>
-        <md-menu #menu="mdMenu">
+        <md-menu #meetupMenu="mdMenu">
             <button md-menu-item>
                 <span>그룹 스터디 모임</span>
             </button>
@@ -24,13 +24,35 @@
 
     <div class="desktop-toolbar">
         <button md-button (click)="this.core.onRouter('/login')">
-            로그인
+            <md-icon>account_box</md-icon> 로그인
         </button>
     </div>    
-    <span class="mobile-toolbar">        
-        <button md-button>
-            <md-icon>menu</md-icon>
-        </button> 
+    <span class="mobile-toolbar">
+
+    <md-button-toggle-group>
+    
+        <md-button-toggle [mdMenuTriggerFor]="toolbarMenu">
+            <md-icon>view_agenda</md-icon>
+        </md-button-toggle>
+
+        <md-menu #toolbarMenu="mdMenu">
+
+            <button md-menu-item (click)="this.core.onRouter('/regist')">
+                <span>개발자 등록</span>
+            </button>
+            
+            <button md-menu-item>
+                <span>모임 만들기</span>
+            </button>
+
+        </md-menu>        
+
+        <md-button-toggle (click)="this.core.onRouter('/login')">
+            <md-icon>account_box</md-icon>
+        </md-button-toggle>
+
+    </md-button-toggle-group>
+
     </span>
 
 </md-toolbar>
