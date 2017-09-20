@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { Observable } from 'rxjs';
@@ -31,7 +31,11 @@ export class RegistComponent implements OnInit {
     si : '',
     do : ''
   };
-  
+
+  @ViewChild('emailPanel')
+  public emailPanel : ElementRef;
+  @ViewChild('addressSearchPanel')
+  public addressSearchPanel : ElementRef;
 
   constructor(
     private _fb: FormBuilder,
@@ -40,6 +44,8 @@ export class RegistComponent implements OnInit {
          
   ngOnInit() {
 
+    this.emailPanel.nativeElement.focus();
+
     this.searchField = new FormControl();
     
     this.address = this.searchField.valueChanges
@@ -47,7 +53,10 @@ export class RegistComponent implements OnInit {
         .distinctUntilChanged()
         .do(_ => this.loading = true)
         .switchMap(term => this.addressSearch.search(term))
-        .do(_ => this.loading = false);
+        .do(_ => {
+          this.addressSearchPanel.nativeElement.focus();
+          this.loading = false; 
+        });
     
 
     this.registForm = this._fb.group({
@@ -59,7 +68,7 @@ export class RegistComponent implements OnInit {
       ]],
       email             : ['', [
         <any> Validators.required,
-        <any> Validators.email
+        <any> Validators.pattern(/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/)
       ]],
       password          : ['', [
         <any> Validators.required,
@@ -77,14 +86,20 @@ export class RegistComponent implements OnInit {
   }
 
   save(model: User, isValid: boolean) {
-    model.avatar = this.url;
-    model.address = this.seletedAddress;
-    console.log(model, isValid);
+    
+    if(isValid){
+      model.avatar = this.url;
+      model.address = this.seletedAddress;
+
+      alert('회원가입이 완료되었습니다.');
+    }
     
   }
   
   isValid = (record : string, value : string) => this.registForm.controls[record]['_errors'] ? this.registForm.controls[record]['_errors'][value] : false;
-
+  openAddressPanel = () => setTimeout( () => this.addressSearchPanel.nativeElement.focus() , 50);
+  hideAddressPanel = () => this.emailPanel.nativeElement.focus();
+  
   dialogAvatar(){
     
     let dialogRef = this.dialog.open(RegistAvatarDialog, {
@@ -99,7 +114,7 @@ export class RegistComponent implements OnInit {
     });
 
   }
-
+  
 }
 
 @Component({

@@ -11,6 +11,7 @@ import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 import { LoginComponent } from './pages/login/login.component';
 
 import { RegistComponent, RegistAvatarDialog } from './pages/regist/regist.component';
+import { ResetComponent } from './pages/reset/reset.component';
 
 const routes : Routes = [
   {
@@ -21,6 +22,9 @@ const routes : Routes = [
   },
   {
     path : 'regist', component : RegistComponent
+  },
+  {
+    path : 'reset', component : ResetComponent
   },
   {
     path : '', redirectTo : '/main', pathMatch : 'full'
@@ -40,8 +44,9 @@ const routes : Routes = [
     MainHeaderComponent,
     MainInfoComponent,
     LoginComponent,
-    RegistComponent,    
-    RegistAvatarDialog  
+    RegistComponent,
+    RegistAvatarDialog,
+    ResetComponent
   ],
   entryComponents : [
     RegistAvatarDialog

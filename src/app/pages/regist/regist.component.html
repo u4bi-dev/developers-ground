@@ -1,14 +1,14 @@
 <div class="wrapper">
     <div class="box">
 
-        <form [formGroup]="registForm" novalidate (ngSubmit)="save(registForm.value, registForm.valid)">
+        <form [formGroup]="registForm" novalidate>
 
             <div class="avatar">
                 <img (click)="dialogAvatar()" [src]="url">
             </div>
 
-            <md-expansion-panel #addressPanel class="field address">
-                
+            <md-expansion-panel #addressPanel class="field address" (opened)="openAddressPanel()" (closed)="hideAddressPanel()">
+                                
                 <md-expansion-panel-header>
                     
                     <md-panel-title>
@@ -22,11 +22,11 @@
                 </md-expansion-panel-header>
        
                 <md-form-field class="field">
-                    <input #addressSearchPanel mdInput placeholder="동(읍[면])" [formControl]="searchField">                   
+                    <input #addressSearchPanel mdInput placeholder="동(읍[면])" [formControl]="searchField" tabindex=4>                   
                 </md-form-field>
                 
                 <div class="field" *ngFor="let item of address | async">
-                    <button (click)="seletedAddress = item; addressPanel.close(); namePanel.focus();" md-button>
+                    <button (click)="seletedAddress = item; addressPanel.close();" md-button tabindex=5>
                         <span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span>
                     </button>
                 </div>
@@ -34,24 +34,14 @@
             </md-expansion-panel>
 
             <md-form-field class="field">
-                <input #namePanel mdInput placeholder="Nickname" formControlName="name">
-                <md-error *ngIf="this.isValid('name', 'required') || this.isValid('name', 'minlength')">
-                    2글자 이상으로 입력해주세요.
-                </md-error>
-                <md-error *ngIf="this.isValid('name', 'pattern') && !this.isValid('name', 'minlength')">
-                    한글 문장만으로 입력해주세요.
-                </md-error>
-            </md-form-field>
-
-            <md-form-field class="field">
-                <input mdInput placeholder="Email" formControlName="email">
+                <input #emailPanel mdInput placeholder="Email" formControlName="email" tabindex=1>
                 <md-error [hidden]="registForm.controls.email.valid">
                     이메일 형식으로 작성해주세요.
                 </md-error>
             </md-form-field>
 
             <md-form-field class="field">
-                <input mdInput type="password" placeholder="Password" formControlName="password">
+                <input mdInput type="password" placeholder="Password" formControlName="password" tabindex=2>
                 <md-error *ngIf="this.isValid('password', 'required') || this.isValid('password', 'minlength') && !this.isValid('password', 'maxlength')">
                     8자 이상으로 입력해주세요.
                 </md-error>
@@ -63,7 +53,17 @@
                 </md-error>
             </md-form-field>             
 
-            <button class="field submit" md-button type="submit">Sign Up</button>
+            <md-form-field class="field">
+                <input mdInput placeholder="Nickname" formControlName="name" tabindex=3>
+                <md-error *ngIf="this.isValid('name', 'required') || this.isValid('name', 'minlength')">
+                    2글자 이상으로 입력해주세요.
+                </md-error>
+                <md-error *ngIf="this.isValid('name', 'pattern') && !this.isValid('name', 'minlength')">
+                    한글 문장만으로 입력해주세요.
+                </md-error>
+            </md-form-field>
+            
+            <button class="field submit" md-button (click)="save(registForm.value, registForm.valid)">Sign Up</button>
 
         </form>
 

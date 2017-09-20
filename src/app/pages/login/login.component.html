@@ -4,7 +4,7 @@
         <form>
             <img class="field favicon" src="./assets/icon_ground.png">
             <md-form-field class="field">
-                <input mdInput placeholder="Email">
+                <input #loginPanel mdInput placeholder="Email">
             </md-form-field>
 
             <md-form-field class="field">
@@ -12,7 +12,7 @@
             </md-form-field>
             
             <div class="field notice">
-                <span>Forgot password?</span>
+                <span (click)="this.core.onRouter('/reset')">Forgot password?</span>
             </div>
 
             <button class="field submit" md-button>Login with Email</button>
