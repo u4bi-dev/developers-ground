@@ -4,6 +4,7 @@ import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { Observable } from 'rxjs';
 
 import { AddressSearchService } from '../../providers/address-search.service';
+import { GithubAvatarService } from '../../providers/github-avatar.service';
 
 import { User } from '../../providers/interface/user.interface';
 import { AddressSearch } from '../../providers/interface/address-search.interface';
@@ -40,7 +41,8 @@ export class RegistComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     public dialog: MdDialog,
-    private addressSearch: AddressSearchService) { }
+    private addressSearch: AddressSearchService,
+    private githubAvatar : GithubAvatarService) { }
          
   ngOnInit() {
 
@@ -100,19 +102,16 @@ export class RegistComponent implements OnInit {
   openAddressPanel = () => setTimeout( () => this.addressSearchPanel.nativeElement.focus() , 50);
   hideAddressPanel = () => this.emailPanel.nativeElement.focus();
   
-  dialogAvatar(){
-    
+  dialogAvatar() {     
     let dialogRef = this.dialog.open(RegistAvatarDialog, {
       width: '240px',
-      data: { 
-        url: this.url
-      }
+      data: { url: this.url }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.url = result;
+      if(result) !result.githubType ? this.url = result.url : this.githubAvatar.getUrl(result.github || '').subscribe( data => this.url = data )
     });
-
+    
   }
   
 }
@@ -125,12 +124,28 @@ export class RegistComponent implements OnInit {
 
 export class RegistAvatarDialog {
 
+  public typeString : string;
+  public typeFlag : boolean = false;
+
   constructor(
     public dialogRef: MdDialogRef<RegistAvatarDialog>,
-    @Inject(MD_DIALOG_DATA) public data: any) { }
+    @Inject(MD_DIALOG_DATA) public data: any
+  ) {
+    this.typeString = 'Github 프로필 가져오기';
+    this.typeFlag = false;
+
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onGithub(): void {
+    
+    this.typeFlag = !this.typeFlag;
+    this.data.githubType = this.typeFlag;
+    this.typeString = this.typeFlag ? '이미지 링크 가져오기' : 'Github 프로필 가져오기';
+
   }
 
 }

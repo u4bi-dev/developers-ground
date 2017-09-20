@@ -2,13 +2,22 @@
   
   <p>이미지 링크를 기입해주세요</p>
   
-  <md-form-field>
-    <input mdInput tabindex="1" [(ngModel)]="data.url" placeholder="URL">
+  <md-form-field *ngIf="!typeFlag">
+    <input #urlPanel mdInput [(ngModel)]="data.url" placeholder="URL">
+  </md-form-field>
+
+  <md-form-field *ngIf="typeFlag">
+    <input #githubPanel mdInput [(ngModel)]="data.github" placeholder="Github Name">
   </md-form-field>
 
 </div>
 
 <div md-dialog-actions>
-  <button md-button [md-dialog-close]="data.url" tabindex="2">확인</button>
-  <button md-button (click)="onNoClick()" tabindex="-1">닫기</button>
+  
+  <button md-button [md-dialog-close]="data">확인</button>
+  <button md-button (click)="onNoClick()">닫기</button>
+  <button md-button (click)="onGithub()">
+    <span>{{ typeString }}</span>
+  </button>
+
 </div>

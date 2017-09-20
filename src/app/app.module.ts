@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { CoreService } from './providers/core.service';
 import { AddressSearchService } from './providers/address-search.service';
+import { GithubAvatarService } from './providers/github-avatar.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { ToolbarComponent } from './shared/toolbar/toolbar.component';
   ],
   providers: [
     CoreService,
-    AddressSearchService
+    AddressSearchService,
+    GithubAvatarService
   ],
   bootstrap: [AppComponent]
 })
