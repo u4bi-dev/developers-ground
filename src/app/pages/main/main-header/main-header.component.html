@@ -2,6 +2,25 @@
   <div class="main-title"><md-icon>place</md-icon> <span>Developers Ground</span></div>  
   <div class="main-sub-title">우리 지역 개발자 네트워킹 서비스</div>
   <div class="main-sub-button">
-    <button md-raised-button>내 주변 개발자 보기</button>
+    
+    <button *ngIf="!isSearch" class="search-button" md-raised-button (click)="onSearch()">내 주변 개발자 보기</button>
+     
+    <div *ngIf="isSearch" class="header-form">
+      <form novalidate>
+        
+        <md-form-field>
+          <md-icon class="close-icon" (click)="onSearch()">close</md-icon>
+          <input #addressSearchPanel mdInput placeholder="지역 검색(동,읍,면)" [(ngModel)]="searchText" [formControl]="searchField" tabindex=1>
+        </md-form-field>
+
+        <div class="list" *ngFor="let item of address | async">
+            <button md-button tabindex=2>
+                <span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span> <span class="people-icon"> <md-icon>face</md-icon> <span>000명</span> </span>
+            </button>
+        </div>
+
+      </form>
+    </div>
+    
   </div>
 </div>
