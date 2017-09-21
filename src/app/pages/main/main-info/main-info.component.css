@@ -1,8 +1,9 @@
 .main-section{ 
     display: -webkit-flex;
     display: flex;
-    flex-flow: row wrap;
-
+    -webkit-flex-flow: row wrap;    
+            flex-flow: row wrap;
+    margin:auto;
     height: 800px;
     color: #4a4a4a;
 
@@ -45,10 +46,15 @@
     width:100%;
 }
 
+@media(max-width: 460px){
+    .main-section{
+        width: 98%;
+    }
+}
+
 @media(min-width: 700px){
     
     .main-section{
-        margin:auto;
         width:85%;
         height: 500px;
     }

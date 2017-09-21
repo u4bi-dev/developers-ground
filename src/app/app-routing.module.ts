@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './pages/main/main.component';
 import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
 import { MainInfoComponent } from './pages/main/main-info/main-info.component';
+import { MainFeatureComponent } from './pages/main/main-feature/main-feature.component';
 
 import { LoginComponent } from './pages/login/login.component';
 
@@ -43,6 +44,7 @@ const routes : Routes = [
     MainComponent,
     MainHeaderComponent,
     MainInfoComponent,
+    MainFeatureComponent,
     LoginComponent,
     RegistComponent,
     RegistAvatarDialog,
