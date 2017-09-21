@@ -7,7 +7,14 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
     z-index: 1;
  }
- 
+
+ .toolbar-wrapper button{
+    font-weight: 400;
+ }
+
+.toolbar-main{
+    font-size: 13px;
+}
 
 .desktop-toolbar{
     display: none;
@@ -33,6 +40,10 @@ md-button-toggle-group{
 
     .mobile-toolbar{
         display: none;
+    }
+
+    .toolbar-main{
+        font-size: 14px;
     }
     
 }

@@ -8,10 +8,10 @@
 
 .main-title{
     position: absolute;
-    top:30%;
+    top:25%;
     font-size: 2rem;
     width: 100%;
-    font-weight: bold;
+    font-weight: 600;
     color : #fff;
 }
 
@@ -19,7 +19,7 @@
     position: absolute;
     top: 55%;
     width: 100%;
-    font-weight: bold;
+    font-weight: 500;
     color : #fff;
 }
 
@@ -27,8 +27,6 @@
     position: absolute;
     top: 65%;
     width: 100%;
-    font-weight: bold;
-    color : #fff;
 }
 
 md-icon{
@@ -38,6 +36,7 @@ md-icon{
 .main-sub-button .search-button{
     background : #fff;
     color : #4E2A84;
+    font-weight: 500;
     -webkit-transition:all .5s ease;
        -moz-transition:all .5s ease;
             transition:all .5s ease;    
@@ -86,6 +85,7 @@ md-icon{
     width: 100%;    
     color: #4a4a4a;
     text-align: left;
+    font-weight: 400;
 }
 
 @media(min-width: 350px){

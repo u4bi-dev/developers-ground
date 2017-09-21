@@ -2,9 +2,11 @@
 
 /*https://material.angular.io/guide/theming */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url(assets/stylesheets/NotoSansKR-Hestia.css);
 
 *{
     box-sizing: border-box;
+    font-family: 'Noto Sans Korean', sans-serif;      
 }
 
 body{
