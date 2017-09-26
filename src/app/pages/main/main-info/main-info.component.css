@@ -19,8 +19,7 @@
     max-height: 450px;
 }
 
-.b{
-    
+.b{ 
     text-align: center;
 }
 
@@ -81,7 +80,7 @@
         margin-top:25%;
         text-align: left;        
     }
-    
+
 }
 
 @media(min-width: 350px){

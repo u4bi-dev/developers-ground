@@ -5,6 +5,9 @@
     background-color : #4E2A84;
     color: #fff;
     margin-top: 40px;
+    border-radius: 100px;
+    width: 95%;
+    margin:auto;
 }
  
 
@@ -15,4 +18,11 @@ svg{
     /*fill: red;*/
     bottom: -40px;
     margin-left: -30px;
+}
+
+@media(min-width: 500px){
+    
+    .main-notice{
+        width: 98%;
+    }
 }
