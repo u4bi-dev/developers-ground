@@ -1,0 +1,18 @@
+.main-notice{
+    position: relative;
+    height: 300px;
+    text-align: center;
+    background-color : #4E2A84;
+    color: #fff;
+    margin-top: 40px;
+}
+ 
+
+svg{ 
+
+    position: absolute;
+    fill:#4E2A84;
+    /*fill: red;*/
+    bottom: -40px;
+    margin-left: -60px;
+}
