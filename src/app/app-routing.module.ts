@@ -24,6 +24,7 @@ import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 import { MainFeatureComponent } from './pages/main/main-feature/main-feature.component';
 import { MainNoticeComponent } from './pages/main/main-notice/main-notice.component';
 import { MainMeetupListComponent } from './pages/main/main-meetup-list/main-meetup-list.component';
+import { MainFooterComponent } from './pages/main/main-footer/main-footer.component';
 
 import { LoginComponent } from './pages/login/login.component';
 
@@ -79,6 +80,7 @@ const routes : Routes = [
     MainFeatureComponent,
     MainNoticeComponent,
     MainMeetupListComponent,
+    MainFooterComponent,
     LoginComponent,
     RegistComponent,
     RegistAvatarDialog,
