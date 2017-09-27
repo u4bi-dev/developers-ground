@@ -7,17 +7,9 @@
         <button md-button (click)="this.core.onRouter('/regist')">
             개발자 등록
         </button>
-        <button md-button [mdMenuTriggerFor]="meetupMenu">
+        <button md-button (click)="this.core.onRouter('/create')">
             모임 만들기
         </button>
-        <md-menu #meetupMenu="mdMenu">
-            <button md-menu-item (click)="this.core.onRouter('/create')">
-                <span>그룹 스터디 모임</span>
-            </button>
-            <button md-menu-item (click)="this.core.onRouter('/create')">
-                <span>모여서 각자 코딩하기</span>
-            </button>
-        </md-menu>
     </div>
 
     <span class="fill-spacer"></span>
