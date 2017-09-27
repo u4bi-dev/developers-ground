@@ -29,13 +29,14 @@
     margin-bottom: 10px;
 }
 
-.box.b button{
-    background: #4E2A84;
-    color :#fff;
+.box.b button{ 
     border-radius: 100px;
     padding: 12.5px 55px;
     font-size: 18px;
-    font-weight: 400;
+    background-color: transparent;
+    border: 2px solid #4E2A84;
+    color :#4E2A84;
+    font-weight: 500;    
 }
 
 .b-box-content{
@@ -50,6 +51,7 @@
     .main-section{
         width: 98%;
     }
+    
 }
 
 @media(min-width: 700px){
@@ -79,6 +81,13 @@
     .b-box-content{
         margin-top:25%;
         text-align: left;        
+    }
+
+    .box.b button{
+        border: 0;
+        background: #4E2A84;
+        color :#fff;
+        font-weight: 400; 
     }
 
 }

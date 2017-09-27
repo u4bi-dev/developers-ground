@@ -1,0 +1,108 @@
+<div class="wrapper">
+
+    <md-vertical-stepper >
+    <md-step >
+        <form >
+        <ng-template mdStepLabel>유형 선택</ng-template>
+
+        <div class="field">
+            <br>
+            <md-radio-group>
+                <md-radio-button class="radio-btn" color="primary" value="1">그룹 스터디 모임</md-radio-button>
+                <md-radio-button class="radio-btn"  color="primary" value="2">모여서 각자 코딩하기</md-radio-button>
+            </md-radio-group>
+        </div>
+
+        <button class="field step-btn" md-button mdStepperNext>다음으로 이동하기</button>
+
+        </form>
+    </md-step>
+    <md-step>
+        <form>
+        <ng-template mdStepLabel>일정 등록</ng-template>
+
+        <md-form-field class="field">
+            <input mdInput placeholder="지역명">
+        </md-form-field>
+
+        <md-form-field class="field">
+            <input mdInput placeholder="공간명">
+        </md-form-field>
+
+        <md-form-field class="field">
+            <input mdInput placeholder="모임 내용">
+        </md-form-field>
+
+        <button class="field step-btn" md-button mdStepperNext>다음으로 이동하기</button>
+
+        </form>
+    </md-step>
+    <md-step>
+        <ng-template mdStepLabel>일자 선택</ng-template>
+
+        <md-form-field class="field">
+            <input mdInput placeholder="모임 일자">
+        </md-form-field>
+
+        <md-form-field class="field">
+            <input mdInput placeholder="시작 시간">
+        </md-form-field>
+
+        <md-form-field class="field">
+            <input mdInput placeholder="종료 시간">
+        </md-form-field>
+
+        <button class="field step-btn" md-button mdStepperNext>다음으로 이동하기</button>         
+
+    </md-step>
+    <md-step>
+        <ng-template mdStepLabel>확인</ng-template>
+
+        <md-list>
+
+            <h3 md-subheader>작성하신 내용이 맞으십니까?</h3>
+                         
+            <md-list-item>
+                <md-icon md-list-icon>done</md-icon>
+                <h4 md-line>유형</h4>
+                <p md-line> 모여서 각자 코딩하기</p>
+            </md-list-item>
+
+            <md-list-item>
+                <md-icon md-list-icon>place</md-icon>
+                <h4 md-line>지역명</h4>
+                <p md-line>서울 특별시 강남구 삼성동</p>
+            </md-list-item>
+
+            <md-list-item>
+                <md-icon md-list-icon>home</md-icon>
+                <h4 md-line>공간명</h4>
+                <p md-line>토즈</p>
+            </md-list-item>
+
+            <md-list-item>
+                <md-icon md-list-icon>local_library</md-icon>
+                <h4 md-line>모임내용</h4>
+                <p md-line>모여서 각자 코딩 후 간단 성과 발표</p>
+            </md-list-item>
+
+            <md-list-item>
+                <md-icon md-list-icon>timer</md-icon>
+                <h4 md-line>시작 시간</h4>
+                <p md-line> 오후 7시 30분</p>
+            </md-list-item>                                                                                          
+
+            <md-list-item>
+                <md-icon md-list-icon>timer_off</md-icon>
+                <h4 md-line>종료 시간</h4>
+                <p md-line> 오후 10시 00분</p>
+            </md-list-item>
+
+        </md-list>
+
+        <button class="field step-btn" md-button mdStepperNext>모임 생성</button>                
+        
+    </md-step>    
+    </md-vertical-stepper>
+    
+</div>
