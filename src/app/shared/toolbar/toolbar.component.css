@@ -6,6 +6,9 @@
     background : #4E2A84;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
     z-index: 1;
+    -webkit-transition:all .3s ease;
+       -moz-transition:all .3s ease;
+            transition:all .3s ease;     
  }
 
  .toolbar-wrapper button{
@@ -25,8 +28,11 @@
 }
 
 md-button-toggle{
-   background-color : #4E2A84;
+   background-color : #4E2A84;   
    color: #fff;
+   -webkit-transition:all .3s ease;
+      -moz-transition:all .3s ease;
+           transition:all .3s ease;     
 }
 
 md-button-toggle-group{

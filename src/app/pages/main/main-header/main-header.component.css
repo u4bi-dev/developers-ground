@@ -1,9 +1,10 @@
 .main-header{
     position: relative;
-    height: 300px;
+    height: 350px;
     text-align: center;
     background : url('https://unsplash.it/1200/800/?image=7&blur') no-repeat fixed 0 0 / cover;
     background-color : #4E2A84;
+    margin-top: -55px;
 }
 
 .main-title{
@@ -33,18 +34,14 @@ md-icon{
     font-size: 1.8rem;
 }
 
-.main-sub-button .search-button{
-    background : #fff;
-    color : #4E2A84;
-    font-weight: 500;
-    -webkit-transition:all .5s ease;
-       -moz-transition:all .5s ease;
-            transition:all .5s ease;    
-}
-
-.main-sub-button .search-button:hover{
-    background : #4E2A84;
+.search-button{
+    background : transparent;
+    border: 1px solid #fff;
     color : #fff;
+    font-weight: 500;
+    -webkit-transition:all 5s ease-in-out;
+       -moz-transition:all 5s ease-in-out;
+            transition:all 5s ease-in-out;    
 }
 
 .header-form{

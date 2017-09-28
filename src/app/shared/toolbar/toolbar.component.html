@@ -1,4 +1,4 @@
-<md-toolbar class="toolbar-wrapper">
+<md-toolbar [ngStyle]="scroll" class="toolbar-wrapper">
     <button class="toolbar-main" md-button (click)="this.core.onRouter('/main')">
         <md-icon>place</md-icon> Developers Ground
     </button>
@@ -23,7 +23,7 @@
 
     <md-button-toggle-group>
     
-        <md-button-toggle [mdMenuTriggerFor]="toolbarMenu">
+        <md-button-toggle [ngStyle]="scroll" [mdMenuTriggerFor]="toolbarMenu">
             <md-icon>view_agenda</md-icon>
         </md-button-toggle>
 
@@ -39,7 +39,7 @@
 
         </md-menu>        
 
-        <md-button-toggle (click)="this.core.onRouter('/login')">
+        <md-button-toggle [ngStyle]="scroll" (click)="this.core.onRouter('/login')">
             <md-icon>account_box</md-icon>
         </md-button-toggle>
 
