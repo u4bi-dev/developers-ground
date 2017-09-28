@@ -3,8 +3,12 @@
   <div class="main-sub-title">우리 지역 개발자 네트워킹 서비스</div>
   <div class="main-sub-button">
 
-    <button *ngIf="!isSearch" class="search-button" md-raised-button (click)="onSearch()">내 주변 개발자 보기</button>
-     
+    <svg *ngIf="!isSearch" xmlns="http://www.w3.org/2000/svg" (click)="onSearch()">
+      <text x="12%" y="60%">내 주변 개발자 보기</text>
+      <rect/>
+ 
+    </svg>
+
     <div *ngIf="isSearch" class="header-form">
       <form novalidate>
         

@@ -19,7 +19,7 @@ export class ToolbarComponent implements OnInit {
       .filter(event => event instanceof NavigationStart)
       .subscribe((event:NavigationStart) => {
         this.routerUrl = event.url;
-        this.scroll = this.routerUrl === '/main' ? { 'background' : 'transparent', 'box-shadow' : 'none' } : { 'background' : '#4E2A84', 'box-shadow' : '0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12)' }
+        this.scroll = ( this.routerUrl === '/main' || this.routerUrl === '/' ) ? { 'background' : 'transparent', 'box-shadow' : 'none' } : { 'background' : '#4E2A84', 'box-shadow' : '0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12)' }
       });
 
   }
@@ -30,7 +30,7 @@ export class ToolbarComponent implements OnInit {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    this.scroll = (document.body.scrollTop < 270 && this.routerUrl === '/main') ? { 'background' : 'transparent', 'box-shadow' : 'none' } : { 'background' : '#4E2A84', 'box-shadow' : '0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12)' };
+    this.scroll = document.body.scrollTop < 270 && ( this.routerUrl === '/main' || this.routerUrl === '/' ) ? { 'background' : 'transparent', 'box-shadow' : 'none' } : { 'background' : '#4E2A84', 'box-shadow' : '0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12)' };
   }
 
 }
