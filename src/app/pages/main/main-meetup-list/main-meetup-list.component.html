@@ -4,7 +4,25 @@
     
     <h2>우리 지역 개발자들의 모임을 한눈에 확인하세요!</h2>
     
-    <div class="card-wrapper"></div>
+    <div class="card-wrapper">
+
+        <div class="box" *ngFor="let item of meetupList">
+            <div class="content">
+                <div class="meetup-img">
+
+                </div>
+                
+                <h3>{{ item.title }}</h3>
+                <h4>{{ item.address }}</h4>
+                
+                <div class="meetup-join">
+                    <div class="join-text"><span><strong>{{ item.join }}</strong>명 참석함</span></div>
+                    <div class="join-icon"><md-icon>check</md-icon></div>                    
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <button md-button>더보기</button>
     
