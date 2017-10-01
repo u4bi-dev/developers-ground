@@ -1,10 +1,16 @@
 .main-header{
     position: relative;
-    height: 350px;
+    height: 450px;
     text-align: center;
     background : url('https://unsplash.it/1200/800/?image=7&blur') no-repeat fixed 0 0 / cover;
     background-color : #4E2A84;
     margin-top: -55px;
+}
+
+.main-title,
+.main-sub-title,
+.main-sub-button svg{
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .main-title{
@@ -21,13 +27,13 @@
     top: 55%;
     width: 100%;
     font-weight: 500;
-    color : #fff;
+    color : #fff;  
 }
 
 .main-sub-button{
     position: absolute;
     top: 65%;
-    width: 100%;
+    width: 100%;    
 }
 
 md-icon{
