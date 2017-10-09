@@ -36,7 +36,7 @@
     width: 100%;    
 }
 
-md-icon{
+mat-icon{
     font-size: 1.8rem;
 }
 
@@ -61,7 +61,7 @@ md-icon{
     padding:5px 20px 5px 20px;     
 }
 
-.header-form md-form-field{
+.header-form mat-form-field{
     width: 100%;
     color: #4a4a4a;
 }
@@ -79,7 +79,7 @@ md-icon{
     cursor: pointer;    
 }
 
-.header-form .people-icon md-icon{
+.header-form .people-icon mat-icon{
     vertical-align: middle;
     margin-right: 5px;
 }

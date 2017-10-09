@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Observable } from 'rxjs';
 
 import { AddressSearchService } from '../../providers/address-search.service';
@@ -40,7 +40,7 @@ export class RegistComponent implements OnInit {
 
   constructor(
     private _fb: FormBuilder,
-    public dialog: MdDialog,
+    public dialog: MatDialog,
     private addressSearch: AddressSearchService,
     private githubAvatar : GithubAvatarService) { }
          
@@ -128,8 +128,8 @@ export class RegistAvatarDialog {
   public typeFlag : boolean = false;
 
   constructor(
-    public dialogRef: MdDialogRef<RegistAvatarDialog>,
-    @Inject(MD_DIALOG_DATA) public data: any
+    public dialogRef: MatDialogRef<RegistAvatarDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.typeString = 'Github 프로필 가져오기';
     this.typeFlag = false;

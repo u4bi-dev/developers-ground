@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { MdInputModule,
-         MdButtonModule,
-         MdMenuModule,
-         MdToolbarModule,
-         MdCardModule,
+import { MatInputModule,
+         MatButtonModule,
+         MatMenuModule,
+         MatToolbarModule,
+         MatCardModule,
          MatStepperModule,
-         MdExpansionModule,
-         MdButtonToggleModule,
-         MdIconModule,
-         MdDialogModule,
-         MdRadioModule,
-         MdListModule
+         MatExpansionModule,
+         MatButtonToggleModule,
+         MatIconModule,
+         MatDialogModule,
+         MatRadioModule,
+         MatListModule
 
 } from '@angular/material';
 
@@ -60,18 +60,18 @@ const routes : Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    MdInputModule,
-    MdButtonModule,
-    MdMenuModule,
-    MdToolbarModule,
-    MdCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatCardModule,
     MatStepperModule,
-    MdExpansionModule,
-    MdButtonToggleModule,
-    MdIconModule,
-    MdDialogModule,
-    MdRadioModule,
-    MdListModule
+    MatExpansionModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatDialogModule,
+    MatRadioModule,
+    MatListModule
   ],
   declarations: [
     MainComponent,
@@ -94,16 +94,16 @@ const routes : Routes = [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    MdInputModule,
-    MdButtonModule,
-    MdMenuModule,
-    MdToolbarModule,
-    MdCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatCardModule,
     MatStepperModule,
-    MdExpansionModule,
-    MdButtonToggleModule,
-    MdIconModule,
-    MdDialogModule    
+    MatExpansionModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatDialogModule    
   ]
 })
 export class AppRoutingModule { }

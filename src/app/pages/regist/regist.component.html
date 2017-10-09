@@ -7,63 +7,63 @@
                 <img (click)="dialogAvatar()" [src]="url">
             </div>
 
-            <md-expansion-panel #addressPanel class="field address" (opened)="openAddressPanel()" (closed)="hideAddressPanel()">
+            <mat-expansion-panel #addressPanel class="field address" (opened)="openAddressPanel()" (closed)="hideAddressPanel()">
                                 
-                <md-expansion-panel-header>
+                <mat-expansion-panel-header>
                     
-                    <md-panel-title>
+                    <mat-panel-title>
                         Address
-                    </md-panel-title>
-                    <md-panel-description>
+                    </mat-panel-title>
+                    <mat-panel-description>
                         <span *ngIf="seletedAddress.do === '' ">우리 동네를 알려주세요</span>
                         <span *ngIf="seletedAddress.do !== '' ">{{ seletedAddress.do }} {{ seletedAddress.si }} {{ seletedAddress.dong }}</span>
-                    </md-panel-description>
+                    </mat-panel-description>
 
-                </md-expansion-panel-header>
+                </mat-expansion-panel-header>
        
-                <md-form-field class="field">
-                    <input #addressSearchPanel mdInput placeholder="동(읍[면])" [formControl]="searchField" tabindex=4>                   
-                </md-form-field>
+                <mat-form-field class="field">
+                    <input #addressSearchPanel matInput placeholder="동(읍[면])" [formControl]="searchField" tabindex=4>                   
+                </mat-form-field>
                 
                 <div class="field" *ngFor="let item of address | async">
-                    <button (click)="seletedAddress = item; addressPanel.close();" md-button tabindex=5>
+                    <button (click)="seletedAddress = item; addressPanel.close();" mat-button tabindex=5>
                         <span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span>
                     </button>
                 </div>
                 
-            </md-expansion-panel>
+            </mat-expansion-panel>
 
-            <md-form-field class="field">
-                <input #emailPanel mdInput placeholder="Email" formControlName="email" tabindex=1>
-                <md-error [hidden]="registForm.controls.email.valid">
+            <mat-form-field class="field">
+                <input #emailPanel matInput placeholder="Email" formControlName="email" tabindex=1>
+                <mat-error [hidden]="registForm.controls.email.valid">
                     이메일 형식으로 작성해주세요.
-                </md-error>
-            </md-form-field>
+                </mat-error>
+            </mat-form-field>
 
-            <md-form-field class="field">
-                <input mdInput type="password" placeholder="Password" formControlName="password" tabindex=2>
-                <md-error *ngIf="this.isValid('password', 'required') || this.isValid('password', 'minlength') && !this.isValid('password', 'maxlength')">
+            <mat-form-field class="field">
+                <input matInput type="password" placeholder="Password" formControlName="password" tabindex=2>
+                <mat-error *ngIf="this.isValid('password', 'required') || this.isValid('password', 'minlength') && !this.isValid('password', 'maxlength')">
                     8자 이상으로 입력해주세요.
-                </md-error>
-                <md-error *ngIf="this.isValid('password', 'maxlength') && !this.isValid('password', 'minlength')">
+                </mat-error>
+                <mat-error *ngIf="this.isValid('password', 'maxlength') && !this.isValid('password', 'minlength')">
                     16자 이하로 입력해주세요.
-                </md-error>
-                <md-error *ngIf="this.isValid('password', 'pattern') && !this.isValid('password', 'maxlength') && !this.isValid('password', 'minlength')">
+                </mat-error>
+                <mat-error *ngIf="this.isValid('password', 'pattern') && !this.isValid('password', 'maxlength') && !this.isValid('password', 'minlength')">
                     숫자와 특수문자 포함되어야 합니다.
-                </md-error>
-            </md-form-field>             
+                </mat-error>
+            </mat-form-field>             
 
-            <md-form-field class="field">
-                <input mdInput placeholder="Nickname" formControlName="name" tabindex=3>
-                <md-error *ngIf="this.isValid('name', 'required') || this.isValid('name', 'minlength')">
+            <mat-form-field class="field">
+                <input matInput placeholder="Nickname" formControlName="name" tabindex=3>
+                <mat-error *ngIf="this.isValid('name', 'required') || this.isValid('name', 'minlength')">
                     2글자 이상으로 입력해주세요.
-                </md-error>
-                <md-error *ngIf="this.isValid('name', 'pattern') && !this.isValid('name', 'minlength')">
+                </mat-error>
+                <mat-error *ngIf="this.isValid('name', 'pattern') && !this.isValid('name', 'minlength')">
                     한글 문장만으로 입력해주세요.
-                </md-error>
-            </md-form-field>
+                </mat-error>
+            </mat-form-field>
             
-            <button class="field submit" md-button (click)="save(registForm.value, registForm.valid)">개발자 등록</button>
+            <button class="field submit" mat-button (click)="save(registForm.value, registForm.valid)">개발자 등록</button>
 
         </form>
 

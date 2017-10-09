@@ -27,7 +27,7 @@
     flex : 1 1 auto;
 }
 
-md-button-toggle{
+mat-button-toggle{
    background-color : #4E2A84;   
    color: #fff;
    -webkit-transition:all .3s ease;
@@ -35,7 +35,7 @@ md-button-toggle{
            transition:all .3s ease;     
 }
 
-md-button-toggle-group{
+mat-button-toggle-group{
    box-shadow: none;
 }
 

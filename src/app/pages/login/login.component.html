@@ -3,19 +3,19 @@
 
         <form>
             <img class="field favicon" src="./assets/icon_ground.png">
-            <md-form-field class="field">
-                <input #loginPanel mdInput placeholder="Email">
-            </md-form-field>
+            <mat-form-field class="field">
+                <input #loginPanel matInput placeholder="Email">
+            </mat-form-field>
 
-            <md-form-field class="field">
-                <input mdInput placeholder="Password" type="password">
-            </md-form-field>
+            <mat-form-field class="field">
+                <input matInput placeholder="Password" type="password">
+            </mat-form-field>
             
             <div class="field notice">
                 <span (click)="this.core.onRouter('/reset')">비밀번호를 잊으셨나요?</span>
             </div>
 
-            <button class="field submit" md-button>로그인</button>
+            <button class="field submit" mat-button>로그인</button>
 
         </form>
 

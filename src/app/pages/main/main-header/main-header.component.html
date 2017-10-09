@@ -1,5 +1,5 @@
 <div class="main-header">
-  <div class="main-title"><md-icon>place</md-icon> <span>Developers Ground</span></div>  
+  <div class="main-title"><mat-icon>place</mat-icon> <span>Developers Ground</span></div>  
   <div class="main-sub-title">우리 지역 개발자 네트워킹 서비스</div>
   <div class="main-sub-button">
 
@@ -12,14 +12,14 @@
     <div *ngIf="isSearch" class="header-form">
       <form novalidate>
         
-        <md-form-field>
-          <md-icon class="close-icon" (click)="onSearch()">close</md-icon>
-          <input #addressSearchPanel mdInput placeholder="지역 검색(동,읍,면)" [(ngModel)]="searchText" [formControl]="searchField" tabindex=1>
-        </md-form-field>
+        <mat-form-field>
+          <mat-icon class="close-icon" (click)="onSearch()">close</mat-icon>
+          <input #addressSearchPanel matInput placeholder="지역 검색(동,읍,면)" [(ngModel)]="searchText" [formControl]="searchField" tabindex=1>
+        </mat-form-field>
 
         <div class="list" *ngFor="let item of address | async">
-            <button md-button tabindex=2>
-                <span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span> <span class="people-icon"> <md-icon>face</md-icon> <span>000명</span> </span>
+            <button mat-button tabindex=2>
+                <span>{{ item.do }}</span> <span>{{ item.si }}</span> <span>{{ item.dong }}</span> <span class="people-icon"> <mat-icon>face</mat-icon> <span>000명</span> </span>
             </button>
         </div>
 

@@ -1,22 +1,22 @@
-<div md-dialog-content>
+<div mat-dialog-content>
   
   <p>이미지 링크를 기입해주세요</p>
   
-  <md-form-field *ngIf="!typeFlag">
-    <input #urlPanel mdInput [(ngModel)]="data.url" placeholder="URL">
-  </md-form-field>
+  <mat-form-field *ngIf="!typeFlag">
+    <input #urlPanel matInput [(ngModel)]="data.url" placeholder="URL">
+  </mat-form-field>
 
-  <md-form-field *ngIf="typeFlag">
-    <input #githubPanel mdInput [(ngModel)]="data.github" placeholder="Github Name">
-  </md-form-field>
+  <mat-form-field *ngIf="typeFlag">
+    <input #githubPanel matInput [(ngModel)]="data.github" placeholder="Github Name">
+  </mat-form-field>
 
 </div>
 
-<div md-dialog-actions>
+<div mat-dialog-actions>
   
-  <button md-button [md-dialog-close]="data">확인</button>
-  <button md-button (click)="onNoClick()">닫기</button>
-  <button md-button (click)="onGithub()">
+  <button mat-button [matDialogClose]="data">확인</button>
+  <button mat-button (click)="onNoClick()">닫기</button>
+  <button mat-button (click)="onGithub()">
     <span>{{ typeString }}</span>
   </button>
 
