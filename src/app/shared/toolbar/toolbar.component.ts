@@ -30,7 +30,10 @@ export class ToolbarComponent implements OnInit {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    this.scroll = document.body.scrollTop < 370 && ( this.routerUrl === '/main' || this.routerUrl === '/' ) ? { 'background' : 'transparent', 'box-shadow' : 'none' } : { 'background' : '#4E2A84', 'box-shadow' : '0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12)' };
+    
+    let top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+    this.scroll = top < 370 && ( this.routerUrl === '/main' || this.routerUrl === '/' ) ? { 'background' : 'transparent', 'box-shadow' : 'none' } : { 'background' : '#4E2A84', 'box-shadow' : '0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12)' };
   }
 
 }

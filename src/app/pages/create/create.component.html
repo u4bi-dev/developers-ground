@@ -1,9 +1,9 @@
 <div class="wrapper">
 
-    <md-vertical-stepper >
-    <md-step >
+    <mat-vertical-stepper >
+    <mat-step >
         <form >
-        <ng-template mdStepLabel>유형 선택</ng-template>
+        <ng-template matStepLabel>유형 선택</ng-template>
 
         <div class="field">
             <br>
@@ -13,13 +13,13 @@
             </mat-radio-group>
         </div>
 
-        <button class="field step-btn" mat-button mdStepperNext>다음으로 이동하기</button>
+        <button class="field step-btn" mat-button matStepperNext>다음으로 이동하기</button>
 
         </form>
-    </md-step>
-    <md-step>
+    </mat-step>
+    <mat-step>
         <form>
-        <ng-template mdStepLabel>일정 등록</ng-template>
+        <ng-template matStepLabel>일정 등록</ng-template>
 
         <mat-form-field class="field">
             <input matInput placeholder="지역명">
@@ -33,12 +33,12 @@
             <input matInput placeholder="모임 내용">
         </mat-form-field>
 
-        <button class="field step-btn" mat-button mdStepperNext>다음으로 이동하기</button>
+        <button class="field step-btn" mat-button matStepperNext>다음으로 이동하기</button>
 
         </form>
-    </md-step>
-    <md-step>
-        <ng-template mdStepLabel>일자 선택</ng-template>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>일자 선택</ng-template>
 
         <mat-form-field class="field">
             <input matInput placeholder="모임 일자">
@@ -52,11 +52,11 @@
             <input matInput placeholder="종료 시간">
         </mat-form-field>
 
-        <button class="field step-btn" mat-button mdStepperNext>다음으로 이동하기</button>         
+        <button class="field step-btn" mat-button matStepperNext>다음으로 이동하기</button>         
 
-    </md-step>
-    <md-step>
-        <ng-template mdStepLabel>확인</ng-template>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>확인</ng-template>
 
         <mat-list>
 
@@ -100,9 +100,9 @@
 
         </mat-list>
 
-        <button class="field step-btn" mat-button mdStepperNext>모임 생성</button>                
+        <button class="field step-btn" mat-button matStepperNext>모임 생성</button>                
         
-    </md-step>    
-    </md-vertical-stepper>
+    </mat-step>    
+    </mat-vertical-stepper>
     
 </div>
